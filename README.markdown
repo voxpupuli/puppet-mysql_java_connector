@@ -4,7 +4,6 @@
 2. [Module Description - What the module does and why it is useful](#module-description)
 3. [Setup - The basics of getting started with mysql_java_connector](#setup)
     * [What mysql_java_connector affects](#what-mysql_java_connector-affects)
-    * [Setup requirements](#setup-requirements)
     * [Beginning with mysql_java_connector](#beginning-with-mysql_java_connector)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
@@ -13,48 +12,89 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves. This is your 30 second elevator pitch for your module. Consider including OS/Puppet version it works with.       
+This module installs the upstream MySQL Java Connector (Connector/J).
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology the module integrates with and what that integration enables. This section should answer the questions: "What does this module *do*?" and "Why would I use it?"
-
-If your module has a range of functionality (installation, configuration, management, etc.) this is the time to mention it.
+Installs the upstream MySQL Java Connector (Connector/J). This is often required as many opera
+ting systems either ship outdated or broken versions by default.
 
 ## Setup
 
 ### What mysql_java_connector affects
 
-* A list of files, packages, services, or operations that the module will alter, impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form. 
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled, etc.), mention it here. 
+* Installs to /opt/MySQL-connector directory.
+* Creates file /opt/MySQL-connector/latest/mysql-connector-java-VERSION-bin.jar
 
 ### Beginning with mysql_java_connector
 
-The very basic steps needed for a user to get the module up and running. 
-
-If your most recent release breaks compatibility or requires particular steps for upgrading, you may wish to include an additional section here: Upgrading (For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```puppet
+  include ::mysql_java_connector
+```
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing the fancy stuff with your module here. 
+Create soft links to the mysql connector for use with applications:
+
+```puppet
+  class { 'mysql_java_connector':
+    links  => [ '/opt/tomcat_app/lib', '/opt/jboss_app/lib' ]
+  }
+```
+
+Most useful available parameters:
+
+```puppet
+  class { 'mysql_java_connector':
+    links       => [ '/opt/tomcat_app/lib', '/opt/jboss_app/lib' ]
+    version     => '4.99.111',
+    installdir  => '/opt/custom',
+    downloadURL => 'http://example.co.za',
+  }
+```
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module. This section should include all of the under-the-hood workings of your module so people know what the module is touching on their system but don't need to mess with things. (We are working on automating this section!)
+###Classes 
+
+####Public Classes
+
+* `mysql_java_connector`: Main class, manages the installation.
+
+####Private Classes
+
+* `mysql_java_connector::install`: Installs mysql_java_connector binary.
+
+####Private Definitions
+
+* `mysql_java_connector::links`: Creates softlinks to application directories of the mysql_java_connector binary.
+
+###Parameters 
+
+#####`ensure`
+Ensure the MySQL connector is installed. Defaults to present.
+#####`version`
+Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.34' 
+#####`product`
+Product name, defaults to 'mysql-connector-java'
+#####`format`
+The default file format of the MySQL Java Connector install file, defaults to tar.gz
+#####`installdir`
+Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector'
+#####`downloadURL`
+Defaults to 'http://cdn.mysql.com/Downloads/Connector-J'
+#####`links`
+Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+This should be compatible with Linux distributions. Tested on:
+
+* CentOS 6/7
+* RedHat 6/7
+* Ubuntu 12.04/14.04
+* Debian 7
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You may also add any additional sections you feel are necessary or important to include here. Please use the `## ` header. 
+See CONTRIBUTING.md
