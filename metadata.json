@@ -1,0 +1,41 @@
+{
+  "name": "mkrakowitzer-mysql_java_connector",
+  "version": "0.1.0",
+  "author": "Merritt Krakowitzer",
+  "summary": "This module manages the MySQL Java Connector (Connector/J).",
+  "license": "MIT",
+  "source": "https://github.com/mkrakowitzer/puppet-mysql_java_connector",
+  "project_page": "https://github.com/mkrakowitzer/puppet-mysql_java_connector",
+  "issues_url": "https://github.com/mkrakowitzer/puppet-mysql_java_connector/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
+    },
+ 
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}
