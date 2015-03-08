@@ -46,7 +46,7 @@ Most useful available parameters:
 
 ```puppet
   class { 'mysql_java_connector':
-    links       => [ '/opt/tomcat_app/lib', '/opt/jboss_app/lib' ]
+    links       => [ '/opt/tomcat_app/lib', '/opt/jboss_app/lib' ],
     version     => '4.99.111',
     installdir  => '/opt/custom',
     downloadURL => 'http://example.co.za',
