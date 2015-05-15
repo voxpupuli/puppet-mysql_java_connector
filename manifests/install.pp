@@ -34,7 +34,7 @@ class mysql_java_connector::install(
 
   file { "${installdir}/latest":
     ensure => link,
-    target => $installdir,
+    target => "${installdir}/${product}-${version}",
   }
 
 }
