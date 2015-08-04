@@ -1,5 +1,5 @@
 #### Table of Contents
-[![Build Status](https://travis-ci.org/mkrakowitzer/puppet-mysql_java_connector.svg?branch=master)](https://travis-ci.org/mkrakowitzer/puppet-mysql_java_connector)
+[![Build Status](https://travis-ci.org/puppet-community/puppet-mysql_java_connector.svg?branch=master)](https://travis-ci.org/puppet-community/puppet-mysql_java_connector)
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
