@@ -16,15 +16,15 @@ describe 'mysql_java_connector' do
           it { is_expected.to contain_file('/opt/MySQL-connector/latest')
             .with({
               'ensure' => 'link',
-              'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.34',
+              'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
           })}
-          it { is_expected.to contain_staging__file('mysql-connector-java-5.1.34.tar.gz').with({
-            'source'  => 'http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.34.tar.gz',
+          it { is_expected.to contain_staging__file('mysql-connector-java-5.1.38.tar.gz').with({
+            'source'  => 'http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz',
             'timeout' => '300',
           })}
-          it { is_expected.to contain_staging__extract('mysql-connector-java-5.1.34.tar.gz').with({
+          it { is_expected.to contain_staging__extract('mysql-connector-java-5.1.38.tar.gz').with({
             'target'  => '/opt/MySQL-connector',
-            'creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.34',
+            'creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
           })}
         end
 
@@ -79,7 +79,7 @@ describe 'mysql_java_connector' do
           it { is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar')
             .with({
               'ensure' => 'link',
-              'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.34-bin.jar',
+              'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.38-bin.jar',
           })}
         end
 
