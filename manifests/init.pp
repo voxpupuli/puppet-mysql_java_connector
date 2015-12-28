@@ -7,7 +7,7 @@
 # [*ensure*]
 #  Ensure the MySQL connector is installed. Defaults to present.
 # [*version*]
-#  Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.34' 
+#  Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.38' 
 # [*product*]
 #  Product name, defaults to 'mysql-connector-java'
 # [*format*]
@@ -21,7 +21,7 @@
 #
 class mysql_java_connector (
   $ensure      = 'present',
-  $version     = '5.1.34',
+  $version     = '5.1.38',
   $product     = 'mysql-connector-java',
   $format      = 'tar.gz',
   $installdir  = '/opt/MySQL-connector',
