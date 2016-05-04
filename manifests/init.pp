@@ -25,7 +25,7 @@ class mysql_java_connector (
   $product     = 'mysql-connector-java',
   $format      = 'tar.gz',
   $installdir  = '/opt/MySQL-connector',
-  $downloadURL = 'http://cdn.mysql.com/Downloads/Connector-J',
+  $downloadURL = 'https://dev.mysql.com/get/Downloads/Connector-J',
   $links       = [],
 ) {
 

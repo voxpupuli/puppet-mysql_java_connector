@@ -19,7 +19,7 @@ describe 'mysql_java_connector' do
               'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
           })}
           it { is_expected.to contain_staging__file('mysql-connector-java-5.1.38.tar.gz').with({
-            'source'  => 'http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz',
+            'source'  => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz',
             'timeout' => '300',
           })}
           it { is_expected.to contain_staging__extract('mysql-connector-java-5.1.38.tar.gz').with({
