@@ -7,7 +7,7 @@ describe 'mysql_java_connector' do
         let(:facts) do
           facts
         end
-        context "mysql_java_connector class without any parameters" do
+        context 'mysql_java_connector class without any parameters' do
           let(:params) { {} }
           it { is_expected.to compile.with_all_deps }
           it { is_expected.to contain_class('mysql_java_connector') }
@@ -25,7 +25,7 @@ describe 'mysql_java_connector' do
           })}
         end
 
-        context "mysql_java_connector class with custom parameters and two links" do
+        context 'mysql_java_connector class with custom parameters and two links' do
           let(:params) {{
             version: '4.99.111',
             installdir: '/opt/custom',
@@ -65,7 +65,7 @@ describe 'mysql_java_connector' do
           })}
         end
 
-        context "mysql_java_connector class with link to application" do
+        context 'mysql_java_connector class with link to application' do
           let(:params) {{
             links: '/opt/jboss_app/lib',
           }}
