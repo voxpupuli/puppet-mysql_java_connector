@@ -53,6 +53,6 @@
     {
       "name": "puppet",
       "version_requirement": "3.x"
-    } 
+    }
   ]
 }

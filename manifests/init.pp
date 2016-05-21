@@ -7,7 +7,7 @@
 # [*ensure*]
 #  Ensure the MySQL connector is installed. Defaults to present.
 # [*version*]
-#  Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.38' 
+#  Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.38'
 # [*product*]
 #  Product name, defaults to 'mysql-connector-java'
 # [*format*]
