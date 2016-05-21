@@ -38,7 +38,7 @@ class mysql_java_connector (
   Class['::mysql_java_connector']
   if ! empty($links) {
     mysql_java_connector::links { $links:
-      require => Class['::mysql_java_connector::install']
+      require => Class['::mysql_java_connector::install'],
     }
   }
 
