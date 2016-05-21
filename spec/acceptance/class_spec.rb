@@ -1,7 +1,6 @@
 require 'spec_helper_acceptance'
 
 describe 'mysql_java_connector class' do
-
   context 'default parameters' do
     # Using puppet_apply as a helper
     it 'works idempotently with no errors' do
@@ -39,6 +38,5 @@ describe 'mysql_java_connector class' do
     describe file('/opt/jboss_app/mysql-connector-java.jar') do
       it { should be_symlink }
     end
-
   end
 end
