@@ -8,7 +8,7 @@ describe 'mysql_java_connector' do
           facts
         end
         context "mysql_java_connector class without any parameters" do
-          let(:params) { { } }
+          let(:params) { {} }
           it { is_expected.to compile.with_all_deps }
           it { is_expected.to contain_class('mysql_java_connector') }
           it { is_expected.to contain_class('mysql_java_connector::install') }
