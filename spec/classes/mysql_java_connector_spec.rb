@@ -18,13 +18,10 @@ describe 'mysql_java_connector' do
               'ensure' => 'link',
               'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
           })}
-          it { is_expected.to contain_staging__file('mysql-connector-java-5.1.38.tar.gz').with({
-            'source'  => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz',
-            'timeout' => '300',
-          })}
-          it { is_expected.to contain_staging__extract('mysql-connector-java-5.1.38.tar.gz').with({
-            'target'  => '/opt/MySQL-connector',
+          it { is_expected.to contain_archive('/opt/MySQL-connector/mysql-connector-java-5.1.38.tar.gz').with({
             'creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
+            'source'  => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz',
+            'extract' => true,
           })}
         end
 
@@ -51,13 +48,10 @@ describe 'mysql_java_connector' do
               'ensure' => 'link',
               'target' => '/opt/custom/mysql-connector-java-4.99.111',
           })}
-          it { is_expected.to contain_staging__file('mysql-connector-java-4.99.111.tar.gz').with({
-            'source'  => 'http://example.co.za/mysql-connector-java-4.99.111.tar.gz',
-            'timeout' => '300',
-          })}
-          it { is_expected.to contain_staging__extract('mysql-connector-java-4.99.111.tar.gz').with({
-            'target'  => '/opt/custom',
+          it { is_expected.to contain_archive('/opt/custom/mysql-connector-java-4.99.111.tar.gz').with({
             'creates' => '/opt/custom/mysql-connector-java-4.99.111',
+            'source'  => 'http://example.co.za/mysql-connector-java-4.99.111.tar.gz',
+            'extract' => true,
           })}
           it { is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar')
             .with({
