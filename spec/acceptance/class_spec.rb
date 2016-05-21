@@ -4,7 +4,7 @@ describe 'mysql_java_connector class' do
 
   context 'default parameters' do
     # Using puppet_apply as a helper
-    it 'should work idempotently with no errors' do
+    it 'works idempotently with no errors' do
       pp = <<-EOS
       file { [ '/opt/tomcat_app', '/opt/jboss_app' ]:
         ensure => directory
