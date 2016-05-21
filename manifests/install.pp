@@ -8,7 +8,7 @@ class mysql_java_connector::install(
   $product     = $mysql_java_connector::product,
   $format      = $mysql_java_connector::format,
   $installdir  = $mysql_java_connector::installdir,
-  $downloadURL = $mysql_java_connector::downloadURL,
+  $downloadurl = $mysql_java_connector::downloadurl,
 ) {
 
   require staging
@@ -23,7 +23,7 @@ class mysql_java_connector::install(
   } ->
 
   staging::file { $file:
-    source  => "${downloadURL}/${file}",
+    source  => "${downloadurl}/${file}",
     timeout => 300,
   } ->
 

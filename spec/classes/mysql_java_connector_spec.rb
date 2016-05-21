@@ -32,7 +32,7 @@ describe 'mysql_java_connector' do
           let(:params) {{
             :version     => '4.99.111',
             :installdir  => '/opt/custom',
-            :downloadURL => 'http://example.co.za',
+            :downloadurl => 'http://example.co.za',
             :links       => ['/opt/tomcat_app/lib', '/opt/jboss_app/lib']
           }}
           it { is_expected.to compile.with_all_deps }

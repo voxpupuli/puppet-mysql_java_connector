@@ -14,7 +14,7 @@
 #  The default file format of the MySQL Java Connector install file, defaults to tar.gz
 # [*installdir*]
 #  Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector'
-# [*downloadURL*]
+# [*downloadurl*]
 #  Defaults to 'http://cdn.mysql.com/Downloads/Connector-J'
 # [*links*]
 #  Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
@@ -25,7 +25,7 @@ class mysql_java_connector (
   $product     = 'mysql-connector-java',
   $format      = 'tar.gz',
   $installdir  = '/opt/MySQL-connector',
-  $downloadURL = 'https://dev.mysql.com/get/Downloads/Connector-J',
+  $downloadurl = 'https://dev.mysql.com/get/Downloads/Connector-J',
   $links       = [],
 ) {
 
