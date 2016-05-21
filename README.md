@@ -1,5 +1,5 @@
 #### Table of Contents
-[![Build Status](https://travis-ci.org/puppet-community/puppet-mysql_java_connector.svg?branch=master)](https://travis-ci.org/puppet-community/puppet-mysql_java_connector)
+[![Build Status](https://travis-ci.org/voxpupuli/puppet-mysql_java_connector.svg?branch=master)](https://travis-ci.org/voxpupuli/puppet-mysql_java_connector)
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
@@ -56,35 +56,36 @@ Most useful available parameters:
 
 ## Reference
 
-###Classes 
+### Classes
 
-####Public Classes
+#### Public Classes
 
 * `mysql_java_connector`: Main class, manages the installation.
 
-####Private Classes
+#### Private Classes
 
 * `mysql_java_connector::install`: Installs mysql_java_connector binary.
 
-####Private Definitions
+#### Private Definitions
 
 * `mysql_java_connector::links`: Creates softlinks to application directories of the mysql_java_connector binary.
 
-###Parameters 
+### Parameters
 
-#####`ensure`
+##### `ensure`
 Ensure the MySQL connector is installed. Defaults to present.
-#####`version`
-Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.38' 
-#####`product`
+##### `version`
+Specifies the version of MySQL Java Connector you would like installed. Defaults to '5.1.38'
+
+##### `product`
 Product name, defaults to 'mysql-connector-java'
-#####`format`
+##### `format`
 The default file format of the MySQL Java Connector install file, defaults to tar.gz
-#####`installdir`
+##### `installdir`
 Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector'
-#####`downloadURL`
+##### `downloadURL`
 Defaults to 'http://cdn.mysql.com/Downloads/Connector-J'
-#####`links`
+##### `links`
 Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
 
 ## Limitations

@@ -8,10 +8,10 @@ class mysql_java_connector::install(
   $product     = $mysql_java_connector::product,
   $format      = $mysql_java_connector::format,
   $installdir  = $mysql_java_connector::installdir,
-  $downloadURL = $mysql_java_connector::downloadURL,
+  $downloadurl = $mysql_java_connector::downloadurl,
 ) {
 
-  require staging
+  include '::archive'
 
   $file = "${product}-${version}.${format}"
 
@@ -21,20 +21,13 @@ class mysql_java_connector::install(
     group  => root,
     mode   => '0755',
   } ->
-
-  staging::file { $file:
-    source  => "${downloadURL}/${file}",
-    timeout => 300,
-  } ->
-
-  staging::extract { $file:
-    target  => $installdir,
+  archive{"${installdir}/${file}":
+    source  => "${downloadurl}/${file}",
     creates => "${installdir}/${product}-${version}",
+    extract => true,
   } ->
-
   file { "${installdir}/latest":
     ensure => link,
     target => "${installdir}/${product}-${version}",
   }
-
 }
