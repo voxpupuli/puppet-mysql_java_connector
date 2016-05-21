@@ -13,10 +13,8 @@ describe 'mysql_java_connector::links' do
         end
         context 'mysql_java_connector class with custom parameters' do
           it { is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar')
-            .with({
-              'ensure' => 'link',
-              'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.38-bin.jar',
-          })}
+            .with(              'ensure' => 'link',
+              'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.38-bin.jar')}
         end
       end
     end
