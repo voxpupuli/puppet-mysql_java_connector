@@ -13,8 +13,8 @@ describe 'mysql_java_connector' do
           it { is_expected.to contain_class('mysql_java_connector') }
           it { is_expected.to contain_class('mysql_java_connector::install') }
           it { is_expected.to contain_file('/opt/MySQL-connector').with_ensure('directory') }
-          it { is_expected.to contain_file('/opt/MySQL-connector/latest')
-            .with('ensure' => 'link',
+          it { is_expected.to contain_file('/opt/MySQL-connector/latest').
+            with('ensure' => 'link',
                   'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.38')
           }
           it { is_expected.to contain_archive('/opt/MySQL-connector/mysql-connector-java-5.1.38.tar.gz').with('creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
@@ -32,29 +32,29 @@ describe 'mysql_java_connector' do
           }}
           it { is_expected.to compile.with_all_deps }
           it { is_expected.to contain_class('mysql_java_connector') }
-          it { is_expected.to contain_class('mysql_java_connector::install')
-            .that_comes_before('Mysql_java_connector::Links[/opt/tomcat_app/lib]')
+          it { is_expected.to contain_class('mysql_java_connector::install').
+            that_comes_before('Mysql_java_connector::Links[/opt/tomcat_app/lib]')
           }
-          it { is_expected.to contain_class('mysql_java_connector::install')
-            .that_comes_before('Mysql_java_connector::Links[/opt/jboss_app/lib]')
+          it { is_expected.to contain_class('mysql_java_connector::install').
+            that_comes_before('Mysql_java_connector::Links[/opt/jboss_app/lib]')
           }
           it { is_expected.to contain_mysql_java_connector__links('/opt/tomcat_app/lib') }
           it { is_expected.to contain_mysql_java_connector__links('/opt/jboss_app/lib') }
           it { is_expected.to contain_file('/opt/custom').with_ensure('directory') }
-          it { is_expected.to contain_file('/opt/custom/latest')
-            .with('ensure' => 'link',
+          it { is_expected.to contain_file('/opt/custom/latest').
+            with('ensure' => 'link',
                   'target' => '/opt/custom/mysql-connector-java-4.99.111')
           }
           it { is_expected.to contain_archive('/opt/custom/mysql-connector-java-4.99.111.tar.gz').with('creates' => '/opt/custom/mysql-connector-java-4.99.111',
                                                                                                        'source'  => 'http://example.co.za/mysql-connector-java-4.99.111.tar.gz',
                                                                                                        'extract' => true)
           }
-          it { is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar')
-            .with('ensure' => 'link',
+          it { is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar').
+            with('ensure' => 'link',
                   'target' => '/opt/custom/latest/mysql-connector-java-4.99.111-bin.jar')
           }
-          it { is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar')
-            .with('ensure' => 'link',
+          it { is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
+            with('ensure' => 'link',
                   'target' => '/opt/custom/latest/mysql-connector-java-4.99.111-bin.jar')
           }
         end
@@ -64,8 +64,8 @@ describe 'mysql_java_connector' do
             links: '/opt/jboss_app/lib'
           }}
           it { is_expected.to contain_mysql_java_connector__links('/opt/jboss_app/lib') }
-          it { is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar')
-            .with('ensure' => 'link',
+          it { is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
+            with('ensure' => 'link',
                   'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.38-bin.jar')
           }
         end
