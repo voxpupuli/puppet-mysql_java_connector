@@ -75,19 +75,19 @@ describe 'mysql_java_connector' do
             let(:params) {{
               ensure: 'foo'
             }}
-            it { is_expected.to raise_error(Puppet::Error, /validate_re/) }
+            it { is_expected.to raise_error(Puppet::Error, %r{validate_re}) }
           end
           describe 'mysql_java_connector class with incorrect version parameter' do
             let(:params) {{
               version: 'version'
             }}
-            it { is_expected.to raise_error(Puppet::Error, /validate_re/) }
+            it { is_expected.to raise_error(Puppet::Error, %r{validate_re}) }
           end
           describe 'mysql_java_connector class with incorrect installdir parameter' do
             let(:params) {{
               installdir: 'foo'
             }}
-            it { is_expected.to raise_error(Puppet::Error, /"foo" is not an absolute path/) }
+            it { is_expected.to raise_error(Puppet::Error, %r{"foo" is not an absolute path}) }
           end
         end
       end
