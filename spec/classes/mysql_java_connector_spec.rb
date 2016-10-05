@@ -75,7 +75,7 @@ describe 'mysql_java_connector' do
               links: '/opt/jboss_app/lib'
             }
           end
-          it { is_expected.to raise_error(Puppet::ParseError, /is not an Array/) }
+          it { is_expected.to raise_error(Puppet::Error, %r{is not an Array}) }
         end
 
         context 'mysql_java_connector class with link as array to application' do
