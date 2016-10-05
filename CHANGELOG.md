@@ -1,3 +1,8 @@
+## 2016-10-05 - Release 2.1.1
+
+- Release of 2.1.0 again, which didn't make it to the forge on the first try
+
+
 ## 2016-10-05 - Release 2.1.0
 
 - Modulesync with latest Vox Pupuli defaults
