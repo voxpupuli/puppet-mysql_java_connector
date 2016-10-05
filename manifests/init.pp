@@ -15,7 +15,7 @@
 # [*installdir*]
 #  Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector'
 # [*downloadurl*]
-#  Defaults to 'http://cdn.mysql.com/Downloads/Connector-J'
+#  Defaults to 'https://dev.mysql.com/get/Downloads/Connector-J'
 # [*links*]
 #  Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
 #
