@@ -15,13 +15,13 @@
 # [*installdir*]
 #  Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector'
 # [*downloadurl*]
-#  Defaults to 'http://cdn.mysql.com/Downloads/Connector-J'
+#  Defaults to 'https://dev.mysql.com/get/Downloads/Connector-J'
 # [*links*]
 #  Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
 #
 class mysql_java_connector (
   $ensure      = 'present',
-  $version     = '5.1.38',
+  $version     = '5.1.40',
   $product     = 'mysql-connector-java',
   $format      = 'tar.gz',
   $installdir  = '/opt/MySQL-connector',
@@ -33,6 +33,7 @@ class mysql_java_connector (
   validate_re($ensure, [ 'present', 'absent' ] )
   validate_re($version, '^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$' )
   validate_absolute_path($installdir)
+  validate_array($links)
 
   class { '::mysql_java_connector::install': } ->
   Class['::mysql_java_connector']

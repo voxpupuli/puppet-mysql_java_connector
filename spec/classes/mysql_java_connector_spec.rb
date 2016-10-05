@@ -16,11 +16,11 @@ describe 'mysql_java_connector' do
           it do
             is_expected.to contain_file('/opt/MySQL-connector/latest').
               with('ensure' => 'link',
-                   'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.38')
+                   'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.40')
           end
           it do
-            is_expected.to contain_archive('/opt/MySQL-connector/mysql-connector-java-5.1.38.tar.gz').with('creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.38',
-                                                                                                           'source'  => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz',
+            is_expected.to contain_archive('/opt/MySQL-connector/mysql-connector-java-5.1.40.tar.gz').with('creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.40',
+                                                                                                           'source'  => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz',
                                                                                                            'extract' => true)
           end
         end
@@ -69,17 +69,26 @@ describe 'mysql_java_connector' do
           end
         end
 
-        context 'mysql_java_connector class with link to application' do
+        context 'mysql_java_connector class with link as string to application' do
           let(:params) do
             {
               links: '/opt/jboss_app/lib'
+            }
+          end
+          it { is_expected.to raise_error(Puppet::Error, %r{is not an Array}) }
+        end
+
+        context 'mysql_java_connector class with link as array to application' do
+          let(:params) do
+            {
+              links: ['/opt/jboss_app/lib']
             }
           end
           it { is_expected.to contain_mysql_java_connector__links('/opt/jboss_app/lib') }
           it do
             is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
               with('ensure' => 'link',
-                   'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.38-bin.jar')
+                   'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar')
           end
         end
 
