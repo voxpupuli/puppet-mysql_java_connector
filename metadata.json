@@ -1,6 +1,6 @@
 {
   "name": "puppet-mysql_java_connector",
-  "version": "2.1.0",
+  "version": "2.1.1-rc0",
   "author": "Vox Pupuli",
   "summary": "This module manages the upstream MySQL Java Connector (Connector/J).",
   "license": "MIT",
