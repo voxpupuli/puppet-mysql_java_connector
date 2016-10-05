@@ -21,7 +21,7 @@
 #
 class mysql_java_connector (
   $ensure      = 'present',
-  $version     = '5.1.38',
+  $version     = '5.1.40',
   $product     = 'mysql-connector-java',
   $format      = 'tar.gz',
   $installdir  = '/opt/MySQL-connector',
