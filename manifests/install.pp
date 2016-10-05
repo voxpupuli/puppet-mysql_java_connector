@@ -17,14 +17,14 @@ class mysql_java_connector::install(
 
   file { $installdir:
     ensure => 'directory',
-    owner  => root,
-    group  => root,
     mode   => '0755',
   } ->
-  archive{"${installdir}/${file}":
-    source  => "${downloadurl}/${file}",
-    creates => "${installdir}/${product}-${version}",
-    extract => true,
+  archive { "${installdir}/${file}":
+    source       => "${downloadurl}/${file}",
+    creates      => "${installdir}/${product}-${version}",
+    extract      => true,
+    extract_path => $installdir,
+    cleanup      => true,
   } ->
   file { "${installdir}/latest":
     ensure => link,
