@@ -19,9 +19,14 @@ describe 'mysql_java_connector' do
                    'target' => '/opt/MySQL-connector/mysql-connector-java-5.1.40')
           end
           it do
-            is_expected.to contain_archive('/opt/MySQL-connector/mysql-connector-java-5.1.40.tar.gz').with('creates' => '/opt/MySQL-connector/mysql-connector-java-5.1.40',
-                                                                                                           'source'  => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz',
-                                                                                                           'extract' => true)
+            is_expected.to contain_archive('/opt/MySQL-connector/mysql-connector-java-5.1.40.tar.gz').
+              with(
+                'creates'      => '/opt/MySQL-connector/mysql-connector-java-5.1.40',
+                'source'       => 'https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz',
+                'extract'      => true,
+                'extract_path' => '/opt/MySQL-connector',
+                'cleanup'      => true
+              )
           end
         end
 

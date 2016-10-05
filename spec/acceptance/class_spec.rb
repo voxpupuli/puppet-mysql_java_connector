@@ -26,9 +26,9 @@ describe 'mysql_java_connector class' do
       it { should be_symlink }
     end
 
-    describe file('/opt/MySQL-connector/latest/mysql-connector-java-5.1.38-bin.jar') do
+    describe file('/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar') do
       it { should be_file }
-      its(:md5sum) { should eq 'adaa13571f32cfb67a388b6b0acfa8e8' }
+      its(:md5sum) { should eq '2ad5cfbcb388bee5a64c879c208c7652' }
     end
 
     describe file('/opt/tomcat_app/mysql-connector-java.jar') do
