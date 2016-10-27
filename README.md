@@ -1,5 +1,12 @@
 # MySQL Java Connector module for Puppet
 
+[![Build Status](https://travis-ci.org/voxpupuli/puppet-mysql_java_connector.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-mysql_java_connector)
+[![Code Coverage](https://coveralls.io/repos/github/voxpupuli/puppet-mysql_java_connector/badge.svg?branch=master)](https://coveralls.io/github/voxpupuli/puppet-mysql_java_connector)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/mysql_java_connector.svg)](https://forge.puppetlabs.com/puppet/mysql_java_connector)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/mysql_java_connector.svg)](https://forge.puppetlabs.com/puppet/mysql_java_connector)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/puppet/mysql_java_connector.svg)](https://forge.puppetlabs.com/puppet/mysql_java_connector)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/mysql_java_connector.svg)](https://forge.puppetlabs.com/puppet/mysql_java_connector)
+
 #### Table of Contents
 
 [![Build Status](https://travis-ci.org/voxpupuli/puppet-mysql_java_connector.svg?branch=master)](https://travis-ci.org/voxpupuli/puppet-mysql_java_connector)
