@@ -19,24 +19,24 @@ describe 'mysql_java_connector class' do
     end
 
     describe file('/opt/MySQL-connector') do
-      it { should be_directory }
+      it { is_expected.to be_directory }
     end
 
     describe file('/opt/MySQL-connector/latest') do
-      it { should be_symlink }
+      it { is_expected.to be_symlink }
     end
 
     describe file('/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar') do
-      it { should be_file }
-      its(:md5sum) { should eq '2ad5cfbcb388bee5a64c879c208c7652' }
+      it { is_expected.to be_file }
+      its(:md5sum) { is_expected.to eq '2ad5cfbcb388bee5a64c879c208c7652' }
     end
 
     describe file('/opt/tomcat_app/mysql-connector-java.jar') do
-      it { should be_symlink }
+      it { is_expected.to be_symlink }
     end
 
     describe file('/opt/jboss_app/mysql-connector-java.jar') do
-      it { should be_symlink }
+      it { is_expected.to be_symlink }
     end
   end
 end
