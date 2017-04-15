@@ -35,8 +35,8 @@ class mysql_java_connector (
   validate_absolute_path($installdir)
   validate_array($links)
 
-  class { '::mysql_java_connector::install': } ->
-  Class['::mysql_java_connector']
+  class { '::mysql_java_connector::install': }
+  -> Class['::mysql_java_connector']
   if ! empty($links) {
     mysql_java_connector::links { $links:
       require => Class['::mysql_java_connector::install'],
