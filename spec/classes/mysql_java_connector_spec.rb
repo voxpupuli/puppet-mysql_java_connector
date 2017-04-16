@@ -7,8 +7,10 @@ describe 'mysql_java_connector' do
         let(:facts) do
           facts
         end
+
         context 'mysql_java_connector class without any parameters' do
           let(:params) { {} }
+
           it { is_expected.to compile.with_all_deps }
           it { is_expected.to contain_class('mysql_java_connector') }
           it { is_expected.to contain_class('mysql_java_connector::install') }
@@ -39,6 +41,7 @@ describe 'mysql_java_connector' do
               links: ['/opt/tomcat_app/lib', '/opt/jboss_app/lib']
             }
           end
+
           it { is_expected.to compile.with_all_deps }
           it { is_expected.to contain_class('mysql_java_connector') }
           it do
@@ -80,6 +83,7 @@ describe 'mysql_java_connector' do
               links: '/opt/jboss_app/lib'
             }
           end
+
           it { is_expected.to raise_error(Puppet::Error, %r{is not an Array}) }
         end
 
@@ -89,6 +93,7 @@ describe 'mysql_java_connector' do
               links: ['/opt/jboss_app/lib']
             }
           end
+
           it { is_expected.to contain_mysql_java_connector__links('/opt/jboss_app/lib') }
           it do
             is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
@@ -104,6 +109,7 @@ describe 'mysql_java_connector' do
                 ensure: 'foo'
               }
             end
+
             it { is_expected.to raise_error(Puppet::Error, %r{validate_re}) }
           end
           describe 'mysql_java_connector class with incorrect version parameter' do
@@ -112,6 +118,7 @@ describe 'mysql_java_connector' do
                 version: 'version'
               }
             end
+
             it { is_expected.to raise_error(Puppet::Error, %r{validate_re}) }
           end
           describe 'mysql_java_connector class with incorrect installdir parameter' do
@@ -120,6 +127,7 @@ describe 'mysql_java_connector' do
                 installdir: 'foo'
               }
             end
+
             it { is_expected.to raise_error(Puppet::Error, %r{"foo" is not an absolute path}) }
           end
         end

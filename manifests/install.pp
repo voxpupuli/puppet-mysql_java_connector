@@ -18,15 +18,15 @@ class mysql_java_connector::install(
   file { $installdir:
     ensure => 'directory',
     mode   => '0755',
-  } ->
-  archive { "${installdir}/${file}":
+  }
+  -> archive { "${installdir}/${file}":
     source       => "${downloadurl}/${file}",
     creates      => "${installdir}/${product}-${version}",
     extract      => true,
     extract_path => $installdir,
     cleanup      => true,
-  } ->
-  file { "${installdir}/latest":
+  }
+  -> file { "${installdir}/latest":
     ensure => link,
     target => "${installdir}/${product}-${version}",
   }
