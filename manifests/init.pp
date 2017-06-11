@@ -20,20 +20,14 @@
 #  Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
 #
 class mysql_java_connector (
-  $ensure      = 'present',
-  $version     = '5.1.40',
-  $product     = 'mysql-connector-java',
-  $format      = 'tar.gz',
-  $installdir  = '/opt/MySQL-connector',
-  $downloadurl = 'https://dev.mysql.com/get/Downloads/Connector-J',
-  $links       = [],
+  Enum['present', 'absent'] $ensure                      = 'present',
+  Pattern[/^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$/] $version = '5.1.40',
+  $product                                               = 'mysql-connector-java',
+  $format                                                = 'tar.gz',
+  Stdlib::Absolutepath $installdir                       = '/opt/MySQL-connector',
+  $downloadurl                                           = 'https://dev.mysql.com/get/Downloads/Connector-J',
+  Array $links                                           = [],
 ) {
-
-  # validate parameters
-  validate_re($ensure, [ 'present', 'absent' ] )
-  validate_re($version, '^(?:(\d+)\.)?(?:(\d+)\.)?(\*|\d+)$' )
-  validate_absolute_path($installdir)
-  validate_array($links)
 
   class { '::mysql_java_connector::install': }
   -> Class['::mysql_java_connector']
@@ -42,5 +36,4 @@ class mysql_java_connector (
       require => Class['::mysql_java_connector::install'],
     }
   }
-
 }
