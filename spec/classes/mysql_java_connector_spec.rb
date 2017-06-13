@@ -77,16 +77,6 @@ describe 'mysql_java_connector' do
           end
         end
 
-        context 'mysql_java_connector class with link as string to application' do
-          let(:params) do
-            {
-              links: '/opt/jboss_app/lib'
-            }
-          end
-
-          it { is_expected.to raise_error(Puppet::Error, %r{is not an Array}) }
-        end
-
         context 'mysql_java_connector class with link as array to application' do
           let(:params) do
             {
@@ -99,36 +89,6 @@ describe 'mysql_java_connector' do
             is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
               with('ensure' => 'link',
                    'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar')
-          end
-        end
-
-        context 'unsupported paramater values' do
-          describe 'mysql_java_connector class with incorrect ensure parameter' do
-            let(:params) do
-              {
-                ensure: 'foo'
-              }
-            end
-
-            it { is_expected.to raise_error(Puppet::Error, %r{validate_re}) }
-          end
-          describe 'mysql_java_connector class with incorrect version parameter' do
-            let(:params) do
-              {
-                version: 'version'
-              }
-            end
-
-            it { is_expected.to raise_error(Puppet::Error, %r{validate_re}) }
-          end
-          describe 'mysql_java_connector class with incorrect installdir parameter' do
-            let(:params) do
-              {
-                installdir: 'foo'
-              }
-            end
-
-            it { is_expected.to raise_error(Puppet::Error, %r{"foo" is not an absolute path}) }
           end
         end
       end
