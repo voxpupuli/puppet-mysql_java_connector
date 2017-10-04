@@ -18,6 +18,10 @@
 #  Defaults to 'https://dev.mysql.com/get/Downloads/Connector-J'
 # [*links*]
 #  Directories to create softlinks to mysql connector file for use within applications. Defaults to an empty array. Must be an array.
+# [*proxy_server*]
+#  Optional proxy server to use, with port number if needed. ie: https://example.com:8080.
+# [*proxy_type*]
+#  Proxy server type (none|http|https|ftp)
 #
 class mysql_java_connector (
   Enum['present', 'absent'] $ensure                      = 'present',
@@ -27,6 +31,8 @@ class mysql_java_connector (
   Stdlib::Absolutepath $installdir                       = '/opt/MySQL-connector',
   $downloadurl                                           = 'https://dev.mysql.com/get/Downloads/Connector-J',
   Array $links                                           = [],
+  $proxy_server                                          = undef,
+  $proxy_type                                            = undef,
 ) {
 
   class { '::mysql_java_connector::install': }
