@@ -108,6 +108,14 @@ Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector
 
 Defaults to `http://cdn.mysql.com/Downloads/Connector-J`
 
+#### `proxy_server`
+
+Optional proxy server to use, with port number if needed. ie: https://example.com:8080.
+
+#### `proxy_type`
+
+Proxy server type (none|http|https|ftp)
+
 #### `links`
 
 Directories to create softlinks to mysql connector file for use within
