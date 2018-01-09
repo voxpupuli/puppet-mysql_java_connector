@@ -60,7 +60,7 @@ Most useful available parameters:
     links       => [ '/opt/tomcat_app/lib', '/opt/jboss_app/lib' ],
     version     => '4.99.111',
     installdir  => '/opt/custom',
-    downloadURL => 'http://example.co.za',
+    downloadurl => 'http://example.co.za',
   }
 ```
 
@@ -90,7 +90,7 @@ Ensure the MySQL connector is installed. Defaults to present.
 #### `version`
 
 Specifies the version of MySQL Java Connector you would like installed. Defaults
-to '5.1.38'
+to '5.1.40'
 
 #### `product`
 
@@ -104,9 +104,9 @@ The default file format of the MySQL Java Connector install file, defaults to ta
 
 Installation directory of the MySQL connector. Defaults to '/opt/MySQL-connector'
 
-#### `downloadURL`
+#### `downloadurl`
 
-Defaults to `http://cdn.mysql.com/Downloads/Connector-J`
+Defaults to `http://dev.mysql.com/Downloads/Connector-J`
 
 #### `proxy_server`
 
