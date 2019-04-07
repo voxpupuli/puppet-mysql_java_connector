@@ -13,7 +13,7 @@ class mysql_java_connector::install(
   $proxy_type   = $mysql_java_connector::proxy_type,
 ) {
 
-  include '::archive'
+  include 'archive'
 
   $file = "${product}-${version}.${format}"
 
