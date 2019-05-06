@@ -10,7 +10,7 @@ define mysql_java_connector::links(
 
   file { "${name}/mysql-connector-java.jar":
     ensure => link,
-    target => "${installdir}/latest/${product}-${version}-bin.jar",
+    target => "${installdir}/latest/${product}-${version}.jar",
   }
 
 }

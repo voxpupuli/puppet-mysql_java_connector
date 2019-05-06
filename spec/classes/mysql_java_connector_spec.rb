@@ -68,12 +68,12 @@ describe 'mysql_java_connector' do
           it do
             is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar').
               with('ensure' => 'link',
-                   'target' => '/opt/custom/latest/mysql-connector-java-4.99.111-bin.jar')
+                   'target' => '/opt/custom/latest/mysql-connector-java-4.99.111.jar')
           end
           it do
             is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
               with('ensure' => 'link',
-                   'target' => '/opt/custom/latest/mysql-connector-java-4.99.111-bin.jar')
+                   'target' => '/opt/custom/latest/mysql-connector-java-4.99.111.jar')
           end
         end
 
@@ -88,7 +88,7 @@ describe 'mysql_java_connector' do
           it do
             is_expected.to contain_file('/opt/jboss_app/lib/mysql-connector-java.jar').
               with('ensure' => 'link',
-                   'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar')
+                   'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.40.jar')
           end
         end
       end

@@ -26,7 +26,7 @@ describe 'mysql_java_connector class' do
       it { is_expected.to be_symlink }
     end
 
-    describe file('/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar') do
+    describe file('/opt/MySQL-connector/latest/mysql-connector-java-5.1.40.jar') do
       it { is_expected.to be_file }
       its(:md5sum) { is_expected.to eq '2ad5cfbcb388bee5a64c879c208c7652' }
     end
