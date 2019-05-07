@@ -7,8 +7,8 @@ describe 'mysql_java_connector class' do
       pp = <<-EOS
       file { [ '/opt/tomcat_app', '/opt/jboss_app' ]:
         ensure => directory
-      } ->
-      class { 'mysql_java_connector': }
+      }
+      -> class { 'mysql_java_connector':
         links => [ '/opt/tomcat_app', '/opt/jboss_app' ]
       }
       EOS
