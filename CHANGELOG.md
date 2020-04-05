@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v4.0.0) (2020-04-05)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v3.0.2...v4.0.0)
+
+**Breaking changes:**
+
+- drop Ubuntu 14.04 support / Add Ubuntu 18.04 support [\#62](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/62) ([bastelfreak](https://github.com/bastelfreak))
+- modulesync 2.7.0 and drop puppet 4 [\#57](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/57) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Remove duplicate CONTRIBUTING.md file [\#63](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/63) ([dhoppe](https://github.com/dhoppe))
+- Clean up acceptance spec helper [\#61](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/61) ([ekohl](https://github.com/ekohl))
+- Allow `puppetlabs/stdlib` 6.x and `puppet/archive` 4.x [\#59](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/59) ([alexjfisher](https://github.com/alexjfisher))
+- modulesync 2.2.0 and allow puppet 6.x [\#54](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/54) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v3.0.2](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v3.0.2) (2018-09-09)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v3.0.1...v3.0.2)
