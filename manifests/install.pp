@@ -2,7 +2,7 @@
 #
 # This class is called from mysql_java_connector for install.
 #
-class mysql_java_connector::install(
+class mysql_java_connector::install (
   $ensure       = $mysql_java_connector::ensure,
   $version      = $mysql_java_connector::version,
   $product      = $mysql_java_connector::product,
@@ -12,7 +12,6 @@ class mysql_java_connector::install(
   $proxy_server = $mysql_java_connector::proxy_server,
   $proxy_type   = $mysql_java_connector::proxy_type,
 ) {
-
   include 'archive'
 
   $file = "${product}-${version}.${format}"
