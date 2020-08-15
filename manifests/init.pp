@@ -34,7 +34,6 @@ class mysql_java_connector (
   $proxy_server                                          = undef,
   $proxy_type                                            = undef,
 ) {
-
   class { 'mysql_java_connector::install': }
   -> Class['::mysql_java_connector']
   if ! empty($links) {
