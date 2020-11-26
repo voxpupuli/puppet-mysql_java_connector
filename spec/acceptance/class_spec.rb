@@ -6,10 +6,10 @@ describe 'mysql_java_connector class' do
     it 'works idempotently with no errors' do
       pp = <<-EOS
       file { [ '/opt/tomcat_app', '/opt/jboss_app' ]:
-        ensure => directory
+        ensure => directory,
       } ->
-      class { 'mysql_java_connector': }
-        links => [ '/opt/tomcat_app', '/opt/jboss_app' ]
+      class { 'mysql_java_connector':
+        links => [ '/opt/tomcat_app', '/opt/jboss_app' ],
       }
       EOS
 
