@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper_acceptance'
 
 describe 'mysql_java_connector class' do
@@ -18,6 +20,7 @@ describe 'mysql_java_connector class' do
       apply_manifest(pp, catch_changes: true)
     end
 
+    # rubocop:disable RSpec/RepeatedExampleGroupBody
     describe file('/opt/MySQL-connector') do
       it { is_expected.to be_directory }
     end
@@ -38,5 +41,6 @@ describe 'mysql_java_connector class' do
     describe file('/opt/jboss_app/mysql-connector-java.jar') do
       it { is_expected.to be_symlink }
     end
+    # rubocop:enable RSpec/RepeatedExampleGroupBody
   end
 end
