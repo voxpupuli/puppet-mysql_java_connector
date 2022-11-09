@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v5.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v5.0.0) (2022-11-09)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v4.0.0...v5.0.0)
+
+**Breaking changes:**
+
+- Remove puppet 5 support; Add Puppet 7 support [\#77](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/77) ([h-haaks](https://github.com/h-haaks))
+- CentOS: Drop EoL 6 support [\#73](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/73) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- puppet/archive: allow 5.x [\#72](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/72) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Allow stdlib 8 and archive 6 [\#74](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/74) ([smortex](https://github.com/smortex))
+- modulesync 3.0.0 & puppet-lint updates [\#69](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/69) ([bastelfreak](https://github.com/bastelfreak))
+- Use voxpupuli-acceptance [\#68](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/68) ([ekohl](https://github.com/ekohl))
+
 ## [v4.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v4.0.0) (2020-04-05)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v3.0.2...v4.0.0)
