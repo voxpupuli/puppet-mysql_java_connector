@@ -40,7 +40,7 @@ as many operating systems either ship outdated or broken versions by default.
 ### Beginning with mysql_java_connector
 
 ```puppet
-  include ::mysql_java_connector
+  include mysql_java_connector
 ```
 
 ## Usage
