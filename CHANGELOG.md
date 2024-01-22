@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v6.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v6.0.0) (2024-01-22)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v5.0.0...v6.0.0)
+
+**Breaking changes:**
+
+- Ubuntu: Drop 16.04 support [\#84](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/84) ([bastelfreak](https://github.com/bastelfreak))
+- Drop Puppet 6 support [\#80](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/80) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- puppet/archive: Allow 7.x [\#85](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/85) ([bastelfreak](https://github.com/bastelfreak))
+- Add Puppet 8 support [\#82](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/82) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs/stdlib: Allow 9.x [\#81](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/81) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Remove legacy top-scope syntax [\#87](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/87) ([smortex](https://github.com/smortex))
+- Fix Symlink for latest mysql releases [\#83](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/83) ([DrRhythm](https://github.com/DrRhythm))
+
 ## [v5.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v5.0.0) (2022-11-09)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v4.0.0...v5.0.0)
