@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v7.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v7.0.0) (2025-12-20)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v6.0.0...v7.0.0)
+
+**Breaking changes:**
+
+- Drop puppet, update openvox minimum version to 8.19 [\#100](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/100) ([TheMeier](https://github.com/TheMeier))
+
+**Implemented enhancements:**
+
+- puppet/archive: Allow 8.x [\#99](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/99) ([TheMeier](https://github.com/TheMeier))
+- metadata.json: Add OpenVox [\#97](https://github.com/voxpupuli/puppet-mysql_java_connector/pull/97) ([jstraw](https://github.com/jstraw))
+
 ## [v6.0.0](https://github.com/voxpupuli/puppet-mysql_java_connector/tree/v6.0.0) (2024-01-22)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-mysql_java_connector/compare/v5.0.0...v6.0.0)
