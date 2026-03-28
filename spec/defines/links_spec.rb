@@ -16,9 +16,9 @@ describe 'mysql_java_connector::links' do
 
         context 'mysql_java_connector class with custom parameters' do
           it do
-            is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar').
-              with('ensure' => 'link',
-                   'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar')
+            is_expected.to contain_file('/opt/tomcat_app/lib/mysql-connector-java.jar')
+              .with('ensure' => 'link',
+                    'target' => '/opt/MySQL-connector/latest/mysql-connector-java-5.1.40-bin.jar')
           end
         end
       end
